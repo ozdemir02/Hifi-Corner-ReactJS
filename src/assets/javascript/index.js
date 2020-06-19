@@ -5,15 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const productsJson = fetch("./data/slideshowprodukt.json")
                                .then(function(response){
-                                 console.log(productsJson)
                                     return response.json();
                                 })
                                .then((result) => {
                                 const produkter = result.produkter.find(function(destinationE){
                                 return destinationE.id === counter;
                                 }); 
-  
-                                    console.log(result.produkter[counter])
   
                                     let htmlSlide = `
                                     <h2 class="slideshow__title">${result.produkter[counter].title}</h2>
