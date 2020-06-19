@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let mainElement = document.querySelector(".main__slideshow");
     let counter = 0;
   
-    const productsJson = fetch("./data/slideshowprodukt.json")
+    fetch("./data/slideshowprodukt.json")
                                .then(function(response){
                                     return response.json();
                                 })
                                .then((result) => {
-                                const produkter = result.produkter.find(function(destinationE){
+                                result.produkter.find(function(destinationE){
                                 return destinationE.id === counter;
                                 }); 
   
